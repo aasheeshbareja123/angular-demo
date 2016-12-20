@@ -1,0 +1,24 @@
+<html>
+
+
+<section>
+  <h1>Model-based Form Example:</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <p>
+      <label>First Name:</label>
+      <input type="text" formControlName="myName">  {{myname}}
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" formControlName="mypassword"> {{password}}
+    </p>
+    <p>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+
+    <p>Value: {{ form.value | json }}</p>
+    <p>Validation status: {{ form.status }}</p>
+  </form>
+</section>
+
+</html>
